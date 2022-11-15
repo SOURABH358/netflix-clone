@@ -1,24 +1,24 @@
-export default Netflix__data = {
+const Netflix__data = {
     cards: [
         {
             title: 'Enjoy on your TV.',
             info: 'Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.',
-            image: ''
+            image: './images/tv_banner.jpg'
         },
         {
             title: 'Download your shows to watch offline.',
             info: 'Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.',
-            image: ''
+            image: './images/download_banner.jpg'
         },
         {
             title: 'Watch everywhere.',
             info: 'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.',
-            image: ''
+            image: './images/everywhere_banner.jpg'
         },
         {
             title: 'Create profiles for children.',
             info: 'Send children on adventures with their favourite characters in a space made just for them—free with your membership.',
-            image: ''
+            image: './images/children_banner.jpg'
         }
 
     ],
@@ -49,3 +49,5 @@ export default Netflix__data = {
         }
     ]
 }
+
+export default Netflix__data

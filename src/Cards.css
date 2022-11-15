@@ -1,0 +1,21 @@
+.cards__section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.card{
+    background: black;
+    width: 100%;
+    display: flex;
+    color: white;
+    align-items: center;
+    padding: 4rem 20%;
+}
+
+.card__hero img{
+    width: 100%;
+}
+.reverse{
+    flex-direction: row-reverse;
+}
