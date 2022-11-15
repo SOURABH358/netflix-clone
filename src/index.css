@@ -14,5 +14,8 @@ body{
     width: 100%;
     min-height: 100vh;
     padding: 0;
-    background-color: #000000;
+    background-color: rgb(98, 98, 98);
+}
+button{
+    cursor: pointer;
 }
