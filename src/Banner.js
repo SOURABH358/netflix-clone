@@ -1,7 +1,7 @@
 import React from "react";
 import './Banner.css'
 import Navbar from "./navbar";
-import {SiAccenture} from "react-icons/si"
+import {SlArrowRight} from "react-icons/sl"
 
 function Banner() {
     return <section className="banner__section">
@@ -12,7 +12,7 @@ function Banner() {
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
             <form className="email__form">
                 <input type = "email" placeholder="Email address"></input>
-                <button type = "button">Get Started <SiAccenture/></button>
+                <button type = "button">Get Started <SlArrowRight/></button>
             </form>
         </div>
     </section>
