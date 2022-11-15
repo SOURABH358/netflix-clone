@@ -2,7 +2,7 @@
     width: 100%;
     height: 95vh;
     background-color: black;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../public/images/netflix_banner.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../public/images/netflix_banner.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -39,10 +39,11 @@
     color: white;
     margin: auto;
     text-align: center;
-    padding-top: 9rem;
+    padding-top: 6rem;
 }
 .hero__title{
-    font-size: 3.5rem;
+    font-size: 4rem;
+    line-height: 4rem;
 }
 .hero__subtitle{
     font-size: 1.25rem;
@@ -61,7 +62,7 @@ p{
 .email__form input{
     border:none;
     color: #000000;
-    height: 3rem;
+    height: 4rem;
     padding: 0rem 1rem;
     font-size: 0.9rem;
 }
