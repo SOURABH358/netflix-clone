@@ -5,12 +5,30 @@
     background-size: cover;
     background-position: center;
 }
+
 .navbar{
     width: 100%;
     padding: 2rem;
-    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .logo img{
     width: 10rem;
-    height: 100%;
+}
+.sign__in{
+    padding:0.25rem 1rem;
+    color: white;
+    background-color: var(--light-red);
+    border-radius: .25rem;
+}
+.tabs{
+    display: flex;
+    gap: 1rem;
+}
+.lang{
+    color: white;
+    padding: 0.25rem 1rem;
+    border: 2px solid white;
+
 }

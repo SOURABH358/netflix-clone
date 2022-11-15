@@ -3,10 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --light-red: #E50914;
+}
+a{
+    text-decoration: none;
+}
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     min-height: 100vh;
     padding: 0;
-    
+    background-color: #000000;
 }
