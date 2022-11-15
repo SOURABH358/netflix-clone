@@ -1,5 +1,9 @@
 import React from "react";
-
+import Banner from "./Banner";
 export default function App(){
-    return <h1>Hello from App</h1>
+    return (
+        <>
+            <Banner/>
+        </>
+    )
 }
