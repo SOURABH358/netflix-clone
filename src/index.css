@@ -5,6 +5,7 @@
 }
 :root{
     --light-red: #E50914;
+    --light-grey: #303030;
 }
 a{
     text-decoration: none;
@@ -14,7 +15,7 @@ body{
     width: 100%;
     min-height: 100vh;
     padding: 0;
-    background-color: rgb(98, 98, 98);
+    background-color: var(--light-grey);
 }
 button{
     cursor: pointer;
