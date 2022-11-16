@@ -30,7 +30,7 @@
     font-size: 1.25rem;
 }
 .faq__answer{
-    /* display: none; */
+    display: none;
 }
 .faq__email__form{
     width: 50%;
@@ -58,4 +58,7 @@
 }
 .faq__email__form form input:focus{
     outline: none;
+}
+.display .faq__answer{
+    display: block;
 }
