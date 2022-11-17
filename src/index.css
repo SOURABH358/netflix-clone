@@ -6,9 +6,11 @@
 :root{
     --light-red: #E50914;
     --light-grey: #303030;
+    --lighter-grey: #5a5959;
 }
 a{
     text-decoration: none;
+    color: white;
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
