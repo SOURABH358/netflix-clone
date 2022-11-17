@@ -22,6 +22,10 @@ function Footer() {
                 <div><a href='https://www.netflix.com/in/'>Legal Notices</a></div>
                 <div><a href='https://www.netflix.com/in/'>Only on Netflix</a></div>
         </div>
+        <div className='lang'>
+            English
+        </div>
+        <div><a href='https://www.netflix.com/in/'>Netflix India</a></div>
     </section>
 }
 
