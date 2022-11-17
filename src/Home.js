@@ -1,7 +1,7 @@
 import React from "react";
-import Banner from "./Banner";
-import Cards from "./Cards";
-import Faq from "./Faq"
+import Banner from "./components/Banner";
+import Cards from "./components/Cards";
+import Faq from "./components/Faq"
 function Home(){
 
     return<>

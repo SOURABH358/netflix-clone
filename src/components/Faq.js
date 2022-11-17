@@ -1,7 +1,6 @@
-import React, {useState} from "react";
 import {SlArrowRight} from "react-icons/sl"
-import Netflix__data from './data'
-import Faq__card from './Faq__card';
+import Netflix__data from '../data'
+import FaqCard from './Faq__card';
 import './Faq.css'
 function Faq() {
 
@@ -9,7 +8,7 @@ function Faq() {
         <p className="faq__title">Frequently Asked Questions</p>
         <div className="faqs__container">
             {Netflix__data.faq.map((el,index)=>{
-                return <Faq__card 
+                return <FaqCard 
                 props = {el}
                 />
             })}

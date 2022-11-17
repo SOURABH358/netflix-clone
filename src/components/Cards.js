@@ -1,5 +1,5 @@
 import React from "react";
-import Netflix__data from "./data";
+import Netflix__data from "../data";
 import './Cards.css'
 function Cards(){
     function getCards(){

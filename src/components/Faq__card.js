@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { FaPlus } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
 
-export default function Faq__card({ props }) {
+export default function FaqCard({ props }) {
     const [display, setDisplay] = useState(false);
 
     return <div className={`faq__card ${display?'display': ''}`} key={props.id}>
