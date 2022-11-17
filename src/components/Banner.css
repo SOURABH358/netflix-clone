@@ -9,28 +9,29 @@
 
 .navbar{
     width: 100%;
-    padding: 2rem;
+    padding: 2rem 4rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .logo img{
     width: 10rem;
 }
 .sign__in{
-    padding:0.25rem 1rem;
+    padding:0.2rem 1rem;
     color: white;
     background-color: var(--light-red);
     border-radius: .25rem;
+    height: 2rem;
 }
 .tabs{
     display: flex;
     gap: 1rem;
 }
 .lang{
+    height: 2rem;
     color: white;
-    padding: 0.25rem 1rem;
-    border: 2px solid white;
+    padding: 0.1rem 1rem;
+    border: 1px solid white;
 
 }
 .hero__container{
@@ -39,19 +40,20 @@
     color: white;
     margin: auto;
     text-align: center;
-    padding-top: 6rem;
+    padding-top: 8rem;
 }
 .hero__title{
     font-size: 4rem;
     line-height: 4rem;
+    font-weight: 500;
 }
 .hero__subtitle{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     margin-top: 0.5rem;
 }
 p{
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 .email__form{
     display: grid;
