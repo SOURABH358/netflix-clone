@@ -9,55 +9,75 @@
     margin-top: 0.5rem;
 }
 .faq__title{
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 3rem;
+    font-weight: normal;
 }
 .faqs__container{
-    width: 50%;
+    width: 55%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 .faq__card{
     background-color: var(--light-grey);
-    padding: 1.25rem 1.5rem;
 }
 .faq__question{
     display: flex;
     justify-content: space-between;
+    padding: 1.25rem 1.75rem;
+    border-bottom: 2px solid black;
+    font-size: 1.5rem;
 }
 .faq__question p{
-    font-size: 1.25rem;
+    font-size: 1.75rem;
 }
+.faq__question div{
+    cursor: pointer;
+}
+
 .faq__answer{
+    padding: 1.25rem 1.75rem;
     display: none;
+}
+.faq__answer p{
+    font-size: 1.65rem;
+
 }
 .faq__email__form{
     width: 50%;
     text-align: center;
 }
+.faq__email__form p{
+    font-size: 1.25rem;
+}
 .faq__email__form form{
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 5fr 2fr;
     width: 100%;
     margin-top: 1rem;
+    border-radius: 0.1rem;
+    overflow: hidden;
 }
 
 .faq__email__form form input{
     border:none;
     color: #000000;
     height: 4rem;
-    padding: 0rem 1rem;
+    padding: 0rem 1.5rem;
     font-size: 0.9rem;
 }
 .faq__email__form form button{
+
     border: none;
     background-color: var(--light-red);
     color: white;
-    font-size: 1rem;
+    font-size: 1.75rem;
 }
 .faq__email__form form input:focus{
     outline: none;
+}
+.fa{
+    font-size: 1.25rem;
 }
 .display .faq__answer{
     display: block;

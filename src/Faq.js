@@ -18,7 +18,7 @@ function Faq() {
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
             <form>
                 <input type="email" placeholder = "Email address"/>
-                <button type="button">Get Started <SlArrowRight/></button>
+                <button type="button">Get Started <SlArrowRight className="fa"/></button>
             </form>
         </div>
     </section>
