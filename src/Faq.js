@@ -1,22 +1,18 @@
 import React, {useState} from "react";
-import { FaPlus } from "react-icons/fa";
 import {SlArrowRight} from "react-icons/sl"
 import Netflix__data from './data'
+import Faq__card from './Faq__card';
 import './Faq.css'
 function Faq() {
 
-    
-    function getAllFaqs() {
-        const [display, setDisplay] = useState(false)
-        return Netflix__data.faq.map((el,index) => {
-
-            return 
-        })
-    }
     return <section className="faq__section">
         <p className="faq__title">Frequently Asked Questions</p>
         <div className="faqs__container">
-            {}
+            {Netflix__data.faq.map((el,index)=>{
+                return <Faq__card 
+                props = {el}
+                />
+            })}
         </div>
         <div className="faq__email__form">
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
