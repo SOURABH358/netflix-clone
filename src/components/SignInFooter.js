@@ -1,28 +1,25 @@
-import { Grid, Link, Typography } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material/CssBaseline";
+import { Grid, Link, Typography, Box } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 function SignInFooter() {
-    return <ThemeProvider>
+    return <div className="SignIn__footer">
         <CssBaseline />
-        <div className="SignIn__footer">
             <Box>
-                <Typography>Questions? Call
-                    <Link variant = "body2" href="#">000-800-040-1843</Link>
+                <Typography color='grey' sx={{mb:4}}>Questions? Call 
+                    <Link variant = "body1" href="#" color='inherit' sx={{ml:1}} underline="hover">000-800-040-1843</Link>
                 </Typography>
             </Box>
-            <Grid container >
-                <Grid item><Link href="#" variant="body2" xs={4} md={3}>FAQ</Link></Grid>
-                <Grid item><Link href="#" variant="body2" xs={4} md={3}>Help Centre</Link></Grid>
-                <Grid item><Link href="#" variant="body2" xs={4} md={3}>Terms of Use</Link></Grid>
-                <Grid item><Link href="#" variant="body2" xs={4} md={3}>Privacy</Link></Grid>
-                <Grid item><Link href="#" variant="body2" xs={4} md={3}>Cookie Preferences</Link></Grid>
-                <Grid item><Link href="#" variant="body2" xs={4} md={3}>Corporate Information</Link></Grid>
+            <Grid container color='grey' sx={{mb:4}} rowGap={2}>
+                <Grid item xs={6} md={3}><Link href="#" variant="body2" color='inherit' underline="hover">FAQ</Link></Grid>
+                <Grid item xs={6} md={3}><Link href="#" variant="body2" color='inherit' underline="hover">Help Centre</Link></Grid>
+                <Grid item xs={6} md={3}><Link href="#" variant="body2" color='inherit' underline="hover">Terms of Use</Link></Grid>
+                <Grid item xs={6} md={3}><Link href="#" variant="body2" color='inherit' underline="hover">Privacy</Link></Grid>
+                <Grid item xs={6} md={3}><Link href="#" variant="body2" color='inherit' underline="hover">Cookie Preferences</Link></Grid>
+                <Grid item xs={6} md={3}><Link href="#" variant="body2" color='inherit' underline="hover">Corporate Information</Link></Grid>
             </Grid>
-            <Box variant="p">
+            <Typography variant="body2" color='grey' width='fit-content' sx={{border:'1px solid grey', py:1, px:2}}>
                 English
-            </Box>
+            </Typography>
         </div>
-    </ThemeProvider>
 }
 
 export default SignInFooter;

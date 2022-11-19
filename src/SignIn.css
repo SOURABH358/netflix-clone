@@ -13,8 +13,15 @@
 }
 .SignIn__form{
     width: 100%;
-    padding: 4rem;
+    padding: 2rem;
+    padding-bottom: 6rem;
 }
+.SignIn__footer{
+    border-top: 2px solid var(--lighter-grey);
+    background-color: black;
+    padding: 3rem 2rem;
+}
+
 
 @media screen and (min-width: 601px) {
     .SignIn__section {
@@ -31,9 +38,16 @@
         width: 10rem;
     }
     .SignIn__form{
-        width: 500px;
+        width: 450px;
         height: 90vh;
+        padding: 4rem;
         background-color: rgba(0, 0, 0, 0.8);
         margin: auto;
+        margin-bottom: 6rem;
+    }
+    .SignIn__footer{
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 2rem 15%;
+        border: none;
     }
 }

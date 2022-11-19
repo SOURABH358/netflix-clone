@@ -15,15 +15,13 @@ function SignInForm() {
             style={{
                 color: "#ffffff"
             }}>
-                Sign in
+                Sign In
             </Typography>
             <Box component="form" sx={{mt:4}}>
                 <TextField 
-                inputProps={{style:{color: 'white'}}}
                 style={{
                     background: "#303030",
                     borderRadius: "8px",
-                    color: "#ffffff"
                 }}
                  margin="normal"
                  required
@@ -55,7 +53,7 @@ function SignInForm() {
                   fullWidth
                   variant="contained"
                   color="error"
-                  sx={{ mt: 8, mb: 2, py:2,}}
+                  sx={{ mt: 4, mb: 2, py:2,}}
                   >Sign in</Button>
                   <FormControlLabel
                   sx={{
@@ -67,7 +65,7 @@ function SignInForm() {
                   label = "Remember Me"/>
             </Box>
             <Box sx={{mt:2}}>
-                <Typography variant="p" color={greyColor} sx={{fontWeight:'500'}}>New to Netflix? </Typography>
+                <Typography variant="p" color={greyColor}>New to Netflix? </Typography>
                 <Link to="/">sign up</Link>
             </Box>
         </ThemeProvider>
