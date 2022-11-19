@@ -16,7 +16,7 @@
     padding: 4rem;
 }
 
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 601px) {
     .SignIn__section {
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/images/netflix_banner.jpg');
         background-position: center;
