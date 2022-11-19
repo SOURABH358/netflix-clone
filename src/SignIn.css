@@ -1,4 +1,4 @@
-body {
+.SignIn__section{
     background-color: black;
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 @media screen and (min-width: 501px) {
-    body {
+    .SignIn__section {
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/images/netflix_banner.jpg');
         background-position: center;
     }
@@ -32,8 +32,8 @@ body {
     }
     .SignIn__form{
         width: 500px;
-        height: 100vh;
-        background-color: black;
+        height: 90vh;
+        background-color: rgba(0, 0, 0, 0.8);
         margin: auto;
     }
 }

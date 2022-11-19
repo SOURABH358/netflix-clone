@@ -2,6 +2,7 @@ import { TextField, Typography, Box, FormControlLabel, Checkbox, Button } from "
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { grey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 function SignInForm() {
 
     const theme = createTheme();
@@ -16,7 +17,7 @@ function SignInForm() {
             }}>
                 Sign in
             </Typography>
-            <Box component="form">
+            <Box component="form" sx={{mt:4}}>
                 <TextField 
                 inputProps={{style:{color: 'white'}}}
                 style={{
@@ -54,7 +55,7 @@ function SignInForm() {
                   fullWidth
                   variant="contained"
                   color="error"
-                  sx={{ mt: 6, mb: 2, py:2,}}
+                  sx={{ mt: 8, mb: 2, py:2,}}
                   >Sign in</Button>
                   <FormControlLabel
                   sx={{
@@ -64,6 +65,10 @@ function SignInForm() {
                     color: "white"
                   }}/>}
                   label = "Remember Me"/>
+            </Box>
+            <Box sx={{mt:2}}>
+                <Typography variant="p" color={greyColor} sx={{fontWeight:'500'}}>New to Netflix? </Typography>
+                <Link to="/">sign up</Link>
             </Box>
         </ThemeProvider>
     </div>
