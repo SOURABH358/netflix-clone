@@ -3,7 +3,7 @@
 
 ## Screenshot  
 <p align = "center">
-    <img src = "./screenshot/screenshot.jpg"/>
+    <img src = "./Screenshot/screenshot.jpg"/>
 </p>  
 
 ## Built With  
