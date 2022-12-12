@@ -16,18 +16,7 @@ const MoviesContext = createContext();
 const MovieContextProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
     useEffect(()=>{
-        const getMovies = async ()=>{
-            try{
-                const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=28`)
-                // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
-                dispatch({type: 'SET__ACTION__MOVIES', payload: response.data.results})
-                // console.log(response.data.results)
-            }
-            catch(error){
-                
-            }
-        }
-        getMovies();
+        
     },[])
     return <MoviesContext.Provider value={{...state, dispatch}}>
         {children}
@@ -37,7 +26,7 @@ const MovieContextProvider = ({children})=>{
 export {MovieContextProvider,MoviesContext}
 
 /**
- id: 28, name: 'Action'}
+{id: 28, name: 'Action'}
 {id: 12, name: 'Adventure'}
 {id: 16, name: 'Animation'}
 {id: 35, name: 'Comedy'}

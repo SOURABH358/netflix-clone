@@ -22,3 +22,13 @@ body{
 button{
     cursor: pointer;
 }
+.movies__container{
+    width: 100%;
+    padding: 0 2.5rem;
+}
+.movie__jumbotron{
+    background-color: black;
+    width: 100%;
+    height: 40rem;
+    margin-bottom: 2rem;
+}

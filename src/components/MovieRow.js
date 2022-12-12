@@ -1,0 +1,89 @@
+import { useState,useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import axios from "axios";
+import SwiperCore, { Navigation, Pagination,Scrollbar, A11y } from "swiper";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import 'swiper/css';
+import './MovieRow.css';
+const MovieRow = ({genre, id}) =>{
+    const [movieList, setMovieList] = useState([])
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+    console.log(movieList)
+    useEffect(()=>{
+        const getMovies = async ()=>{
+            try{
+                const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${id}`)
+                // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
+                setMovieList(response.data.results)
+            }
+            catch(error){
+                
+            }
+        }
+        getMovies();
+    },[])
+    SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
+    return <div className="movie__list">
+        <h3>{genre}</h3>
+        <Swiper className="swiper__container"
+    onInit={(swiper) => {
+        swiper.params.navigation.prevEl = prevRef.current;
+        swiper.params.navigation.nextEl = nextRef.current;
+        swiper.navigation.init();
+        swiper.navigation.update();
+      }}
+    modules={[Navigation, Pagination, A11y]}
+    allowTouchMove={false}
+    spaceBetween={50}
+    grabCursor={false}
+    draggable={false}
+    loop={true}
+    breakpoints={{
+        1440: {
+            slidesPerView: 5,
+            spaceBetween:10
+        },
+        980:{
+            slidesPerView:4,
+            spaceBetween:10
+        },
+        640:{
+            slidesPerView:3,
+            spaceBetween: 10
+        },
+        480:{
+            slidesPerView: 2,
+            spaceBetween: 10
+        }
+    }}
+    onSlideChange={() => console.log('slide change')}
+    onSwiper={(swiper) => console.log(swiper)}
+    // navigation={{
+    //     prevEl:prevRef.current,
+    //     nextEl: nextRef.current
+    // }}
+    pagination={{clickable:true}}
+    preventClicksPropagation={true}
+        preventClicks={true}
+        scrollbar={{ draggable: false, hide: true }}
+        slideToClickedSlide={false}
+  >
+    {movieList?.map(movie=>{
+        const img = movie.poster_path?`https://image.tmdb.org/t/p/original/${movie.poster_path}`:
+        `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
+        return (
+            <SwiperSlide className="swiper__slide">
+                <div><img src={img} alt = {movie.title}/></div>
+                <p>{movie.title}</p>
+            </SwiperSlide>
+        )
+    })}
+    <div id = "pre" className="btns" ref={prevRef}><BsChevronCompactLeft/></div>
+    <div id = "next" className="btns" ref={nextRef}><BsChevronCompactRight/></div>
+  </Swiper>
+  
+  </div>
+}
+
+export default MovieRow;
