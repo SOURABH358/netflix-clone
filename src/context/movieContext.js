@@ -1,7 +1,6 @@
 import { createContext, useEffect, useReducer } from "react";
 import axios from "axios";
 const INITIAL_STATE = {
-    actionMovies:[]
 } 
 function reducer(state, action){
     if(action.type==='SET__ACTION__MOVIES'){

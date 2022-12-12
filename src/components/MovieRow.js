@@ -1,31 +1,32 @@
 import { useState,useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import axios from "axios";
 import SwiperCore, { Navigation, Pagination,Scrollbar, A11y } from "swiper";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import 'swiper/css';
 import './MovieRow.css';
-const MovieRow = ({genre, id}) =>{
-    const [movieList, setMovieList] = useState([])
+const MovieRow = ({genre, movieList, setModal, setCurrentMovie}) =>{
     const prevRef = useRef(null);
     const nextRef = useRef(null);
-    console.log(movieList)
-    useEffect(()=>{
-        const getMovies = async ()=>{
-            try{
-                const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${id}`)
-                // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
-                setMovieList(response.data.results)
-            }
-            catch(error){
+    // useEffect(()=>{
+    //     const getMovies = async ()=>{
+    //         try{
+    //             const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${id}`)
+    //             // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
+    //             setMovieList(response.data.results)
+    //         }
+    //         catch(error){
                 
-            }
-        }
-        getMovies();
-    },[])
+    //         }
+    //     }
+    //     getMovies();
+    // },[])
+    const handleSelect = (movie)=>{
+        setModal(true);
+        setCurrentMovie(movie)
+    }
     SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
     return <div className="movie__list">
-        <h3>{genre}</h3>
+        <h3>{genre + " Movies"}</h3>
         <Swiper className="swiper__container"
     onInit={(swiper) => {
         swiper.params.navigation.prevEl = prevRef.current;
@@ -57,8 +58,6 @@ const MovieRow = ({genre, id}) =>{
             spaceBetween: 10
         }
     }}
-    onSlideChange={() => console.log('slide change')}
-    onSwiper={(swiper) => console.log(swiper)}
     // navigation={{
     //     prevEl:prevRef.current,
     //     nextEl: nextRef.current
@@ -73,8 +72,8 @@ const MovieRow = ({genre, id}) =>{
         const img = movie.poster_path?`https://image.tmdb.org/t/p/original/${movie.poster_path}`:
         `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
         return (
-            <SwiperSlide className="swiper__slide">
-                <div><img src={img} alt = {movie.title}/></div>
+            <SwiperSlide className="swiper__slide" onClick={handleSelect}>
+                <div><img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt = {movie.title}/></div>
                 <p>{movie.title}</p>
             </SwiperSlide>
         )
