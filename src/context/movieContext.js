@@ -1,30 +1,35 @@
 import { createContext, useEffect, useReducer } from "react";
 import axios from "axios";
 const INITIAL_STATE = {
-
+    actionMovies:[]
 } 
 function reducer(state, action){
-    if(action.type==='ACTION__MOVIES'){
-
+    if(action.type==='SET__ACTION__MOVIES'){
+        return {
+            ...state,
+            actionMovies: action.payload
+        }
     }
 }
 const MoviesContext = createContext();
-const getMovies = async ()=>{
-    try{
-        // const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=28`)
-        // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
-        // console.log(response)
-    }
-    catch(error){
-        
-    }
-}
+
 const MovieContextProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
     useEffect(()=>{
+        const getMovies = async ()=>{
+            try{
+                const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=28`)
+                // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
+                dispatch({type: 'SET__ACTION__MOVIES', payload: response.data.results})
+                // console.log(response.data.results)
+            }
+            catch(error){
+                
+            }
+        }
         getMovies();
     },[])
-    return <MoviesContext.Provider value={{state, dispatch}}>
+    return <MoviesContext.Provider value={{...state, dispatch}}>
         {children}
     </MoviesContext.Provider>
 }

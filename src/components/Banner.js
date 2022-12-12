@@ -1,6 +1,7 @@
 import React from "react";
 import './Banner.css'
 import Navbar from "./navbar";
+import { Link } from "react-router-dom";
 import {SlArrowRight} from "react-icons/sl"
 
 function Banner() {
@@ -12,7 +13,7 @@ function Banner() {
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
             <form className="email__form">
                 <input type = "email" placeholder="Email address"></input>
-                <button type = "button">Get Started <SlArrowRight/></button>
+                <button type = "button"><Link to ="/movies">Get Started <SlArrowRight/></Link></button>
             </form>
         </div>
     </section>
