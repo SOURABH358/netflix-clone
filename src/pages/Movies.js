@@ -32,17 +32,20 @@ const Movies = () => {
     }, [])
     return (
         <section className="movies__container">
+            <div className="movies__navbar">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="netflix_logo"/>
+            </div>
             <div className="movie__jumbotron">
                 <div className="movie__content">
-                <h3>{movieData.length?movieData[0].movieList[0].title:""}</h3>
-                <p style={{ color: "var(--lighter-grey)" }}><span>{movieData.length?movieData[0].movieList[0].release_date.slice(0,4):""}</span>|
-                    <span>{movieData.length?movieData[0].movieList[0].adult?"U/A 16+":"U/A 13+":""}</span>|
+                <h3>{movieData.length?movieData[0].movieList[14].title:""}</h3>
+                <p style={{ color: "var(--lighter-grey)" }}><span>{movieData.length?movieData[0].movieList[14].release_date.slice(0,4):""}</span>|
+                    <span>{movieData.length?movieData[0].movieList[14].adult?"U/A 16+":"U/A 13+":""}</span>|
                     <span>2h 27min</span>|
-                    <span>{movieData.length?movieData[0].movieList[0].genre_ids.map((el)=>{
+                    <span>{movieData.length?movieData[0].movieList[14].genre_ids.map((el)=>{
         return movieGenre.filter(item=>item.id === el)[0].name
     }).join(", "):""}</span>
                 </p>
-                <p>{movieData.length?movieData[0].movieList[0].overview:""}</p>
+                <p>{movieData.length?movieData[0].movieList[14].overview:""}</p>
                 <button className="watch__now">▶ Play</button>
                 <button className="trailer">More Info</button>
                 </div>
@@ -54,7 +57,8 @@ const Movies = () => {
                 //     backgroundRepeat: "no-repeat"
                 // }}
                 >
-                    <img src={movieData.length?`https://image.tmdb.org/t/p/original${movieData[0].movieList[0].poster_path}`:""} alt="poster"/>
+                    {/* <img src={movieData.length?`https://image.tmdb.org/t/p/original${movieData[0].movieList[6].poster_path}`:""} alt="poster"/> */}
+                    <img src={movieData.length?`https://image.tmdb.org/t/p/w500${movieData[0].movieList[14].backdrop_path}`:""} alt="poster"/>
                     <div className="layover3"></div>
                 </div>
             </div>

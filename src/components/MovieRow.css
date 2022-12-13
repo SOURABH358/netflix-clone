@@ -35,9 +35,9 @@
     width: 10px;
     height: 20px;
     color: red;
-    font-size: 2rem;
+    font-size: 3rem;
     z-index: 20;
-    transform: translateY(-1.5rem);
+    transform: translateY(-2.5rem);
 }
 
 #pre{
@@ -49,5 +49,12 @@
 @media  screen and (max-width: 900px) {
     .movie__list{
         padding: 0;
+    }
+    .movie__list h3{
+        padding-left: 1rem;
+        font-size: 1.1rem;
+    }
+    .swiper__slide p{
+        font-size: 0.8rem;
     }
 }
