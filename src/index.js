@@ -10,9 +10,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <StrictMode>
         <BrowserRouter>
-            <MovieContextProvider>
+            {/* <MovieContextProvider> */}
                 <App />
-            </MovieContextProvider>
+            {/* </MovieContextProvider> */}
         </BrowserRouter>
     </StrictMode>
 )

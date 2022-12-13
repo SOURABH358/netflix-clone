@@ -72,10 +72,10 @@ const MovieRow = ({genre, movieList, setModal, setCurrentMovie}) =>{
         const img = movie.poster_path?`https://image.tmdb.org/t/p/original/${movie.poster_path}`:
         `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
         return (
-            <SwiperSlide className="swiper__slide" onClick={handleSelect}>
+            movie.backdrop_path?<SwiperSlide className="swiper__slide" onClick={()=>handleSelect(movie)}>
                 <div><img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt = {movie.title}/></div>
                 <p>{movie.title}</p>
-            </SwiperSlide>
+            </SwiperSlide>:null
         )
     })}
     <div id = "pre" className="btns" ref={prevRef}><BsChevronCompactLeft/></div>

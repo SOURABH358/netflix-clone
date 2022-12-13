@@ -1,3 +1,75 @@
 .modal__section{
-    
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    color: white;
+}
+h3{
+    font-size: 1.5rem;
+}
+.movie__details p{
+    font-size: 0.9rem;
+    margin: 2rem 0;
+}
+.layover{
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+}
+.movie__details{
+    position: fixed;
+    width: 80%;
+    top: 0;
+    left: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: black;
+}
+.movie__info{
+    padding: 0 3rem;
+}
+.movie__details span:not(:nth-child(1)){
+    margin: 0rem 1rem;
+}
+.movie__details span:nth-child(1){
+    margin-right: 1rem;
+}
+.movie__details span:nth-child(2){
+    padding: 0 0.2rem;
+    border: 2px solid var(--lighter-grey);
+}
+.movie__poster{
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient() url(https://image.tmdb.org/t/p/original/9z4jRr43JdtU66P0iy8h18OyLql.jpg); */
+    position: relative;
+}
+.layover2{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(0,0,0), transparent);
+}
+.watch__now{
+    background-color: var(--light-red);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-right: 2rem;
+    border-radius: 0.25rem;
+}
+.trailer{
+    background-color: transparent;
+    border: none;
+    color: var(--lighter-grey);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--lighter-grey);
+    border: 2px solid white;
 }

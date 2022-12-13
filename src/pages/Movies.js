@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { MoviesContext } from "../context/movieContext.js";
 import MovieRow from "../components/MovieRow.js";
 import axios from "axios";
@@ -8,29 +8,33 @@ const Movies = () => {
     const [modal, setModal] = useState(false);
     const [currentMovie, setCurrentMovie] = useState(null);
     const [movieData, setMovieData] = useState([])
-    console.log(movieData)
-    const getMovies = async (id, name)=>{
-        try{
-            const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${id}`)
-            // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
-            // console.log(response.data.results)
-            setMovieData((pre)=>{
-                return [
-                    ...pre,
-                    {title:name,
-                    movieList: response.data.results}
-                ]
-            })
-        }
-        catch(error){
-            console.log(error)
-        }
-    }
+    console.log(currentMovie)
+    
     useEffect(()=>{
-                 !movieData.length&&movieGenre.map((item)=>{
-                    console.log('fetch')
-                    getMovies(item.id, item.name)
+        const getMovies = async (id, name)=>{
+            try{
+                const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${id}`)
+                // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
+                // console.log(response.data.results)
+                setMovieData((pre)=>{
+                    return [
+                        ...pre,
+                        {id,
+                        title:name,
+                        movieList: response.data.results}
+                    ]
                 })
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+        // setMovieData([]);
+        movieGenre.forEach(async (item)=>{
+                    console.log(item)
+                   await getMovies(item.id, item.name)
+                })
+        // console.log('rendered')
     },[])
     return (
         <section className="movies__container">
@@ -38,8 +42,10 @@ const Movies = () => {
                 <h1>Movies</h1>
             </div>
             {movieData.length?movieData.map(movie=>{
+                if (!movie.id) 
+                    {return ""}
                 return (
-                    <MovieRow 
+                    <MovieRow
                     genre= {movie.title}
                     movieList = {movie.movieList}
                     setModal = {setModal}
@@ -48,7 +54,9 @@ const Movies = () => {
                 )
             }):null}
 
-            {modal&&<Modal/>}
+            {modal&&<Modal
+            setModal={setModal}
+            movie={currentMovie}/>}
         </section>
     )
 }
