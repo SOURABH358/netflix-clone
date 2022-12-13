@@ -43,19 +43,23 @@ const MovieRow = ({genre, movieList, setModal, setCurrentMovie}) =>{
     breakpoints={{
         1440: {
             slidesPerView: 5,
-            spaceBetween:10
+            spaceBetween:10,
+            slidesPerGroup: 5
         },
         980:{
             slidesPerView:4,
-            spaceBetween:10
+            spaceBetween:10,
+            slidesPerGroup: 4
         },
         640:{
             slidesPerView:3,
-            spaceBetween: 10
+            spaceBetween: 10,
+            slidesPerGroup: 3
         },
         480:{
             slidesPerView: 2,
-            spaceBetween: 10
+            spaceBetween: 10,
+            slidesPerGroup: 3
         }
     }}
     // navigation={{
@@ -78,7 +82,7 @@ const MovieRow = ({genre, movieList, setModal, setCurrentMovie}) =>{
             </SwiperSlide>:null
         )
     })}
-    <div id = "pre" className="btns" ref={prevRef}><BsChevronCompactLeft/></div>
+    {/* <div id = "pre" className="btns" ref={prevRef}><BsChevronCompactLeft/></div> */}
     <div id = "next" className="btns" ref={nextRef}><BsChevronCompactRight/></div>
   </Swiper>
   

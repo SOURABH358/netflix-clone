@@ -1,5 +1,6 @@
 .movie__list{
     margin-bottom: 2rem;
+    padding: 0 2.5rem;
 }
 .movie__list h3{
     color: white;
@@ -44,4 +45,9 @@
 }
 #next{
     right: 2rem;
+}
+@media  screen and (max-width: 900px) {
+    .movie__list{
+        padding: 0;
+    }
 }

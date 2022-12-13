@@ -6,12 +6,12 @@ const Modal = ({ setModal, movie }) => {
         <div className="movie__details">
             <div className="movie__info">
                 <h3>{movie.title}</h3>
-                <p style={{ color: "var(--lighter-grey)" }}><span>{movie.release_date.slice(0,4)}</span>|
-                    <span>{movie.adult?"U/A 16+":"U/A 13+"}</span>|
+                <p style={{ color: "var(--lighter-grey)" }}><span>{movie.release_date.slice(0, 4)}</span>|
+                    <span>{movie.adult ? "U/A 16+" : "U/A 13+"}</span>|
                     <span>2h 27min</span>|
-                    <span>{movie.genre_ids.map((el)=>{
-        return movieGenre.filter(item=>item.id === el)[0].name
-    }).join(" , ")}</span>
+                    <span>{movie.genre_ids.map((el) => {
+                        return movieGenre.filter(item => item.id === el)[0].name
+                    }).join(" , ")}</span>
                 </p>
                 <p>{movie.overview}</p>
                 <button className="watch__now">Watch Now</button>
@@ -23,10 +23,10 @@ const Modal = ({ setModal, movie }) => {
                     backgroundSize: "cover",
                     backgroundPosition: "center"
                 }}
-                >
-                    <div className="layover2">
+            >
+                <div className="layover2">
 
-                    </div>
+                </div>
                 {/* <img src="https://image.tmdb.org/t/p/original/9z4jRr43JdtU66P0iy8h18OyLql.jpg" alt="Troll"/> */}
             </div>
         </div>
