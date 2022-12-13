@@ -1,16 +1,17 @@
 import "./Modal.css"
 import { movieGenre } from "../data"
 const Modal = ({ setModal, movie }) => {
-    console.log(movie)
     return <section className="modal__section">
         <div className="layover" onClick={() => { setModal(false) }}></div>
         <div className="movie__details">
             <div className="movie__info">
                 <h3>{movie.title}</h3>
-                <p style={{ color: "var(--lighter-grey)" }}><span>{movie.release_date}</span>|
+                <p style={{ color: "var(--lighter-grey)" }}><span>{movie.release_date.slice(0,4)}</span>|
                     <span>{movie.adult?"U/A 16+":"U/A 13+"}</span>|
                     <span>2h 27min</span>|
-                    <span>Adventure & Fantasy</span>
+                    <span>{movie.genre_ids.map((el)=>{
+        return movieGenre.filter(item=>item.id === el)[0].name
+    }).join(" , ")}</span>
                 </p>
                 <p>{movie.overview}</p>
                 <button className="watch__now">Watch Now</button>
