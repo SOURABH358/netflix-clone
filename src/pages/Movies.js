@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import { MoviesContext } from "../context/movieContext.js";
 import MovieRow from "../components/MovieRow.js";
 import axios from "axios";
 import { movieGenre } from "../data"
 import Modal from "../components/Modal.js";
-import ReactPlayer from "react-player";
 const Movies = () => {
     const [modal, setModal] = useState(false);
     const [currentMovie, setCurrentMovie] = useState(null);

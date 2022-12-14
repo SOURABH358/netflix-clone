@@ -12,14 +12,14 @@
     width: 100%;
     position: relative;
 }
+.swiper__slide{
+    transition: 0.5s ease-in-out;
+}
 .swiper__slide img{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    /* background-color: red; */
-
 }
 .swiper__slide p{
     color: white;

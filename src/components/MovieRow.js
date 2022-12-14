@@ -1,25 +1,12 @@
-import { useState,useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination,Scrollbar, A11y } from "swiper";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { BsChevronCompactRight } from "react-icons/bs";
 import 'swiper/css';
 import './MovieRow.css';
 const MovieRow = ({genre, movieList, setModal, setCurrentMovie}) =>{
     const prevRef = useRef(null);
     const nextRef = useRef(null);
-    // useEffect(()=>{
-    //     const getMovies = async ()=>{
-    //         try{
-    //             const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${id}`)
-    //             // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
-    //             setMovieList(response.data.results)
-    //         }
-    //         catch(error){
-                
-    //         }
-    //     }
-    //     getMovies();
-    // },[])
     const handleSelect = (movie)=>{
         setModal(true);
         setCurrentMovie(movie)
