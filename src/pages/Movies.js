@@ -3,21 +3,23 @@ import MovieRow from "../components/MovieRow.js";
 import axios from "axios";
 import { movieGenre } from "../data"
 import Modal from "../components/Modal.js";
+import Footer from "../components/Footer.js";
 const Movies = () => {
     const [modal, setModal] = useState(false);
     const [currentMovie, setCurrentMovie] = useState(null);
     const [movieData, setMovieData] = useState([])
-    console.log(movieData)
 
     useEffect(() => {
-        const getMovies = () => {
+        const getMovies = async () => {
             try {
                 let data = movieGenre.map(async (item)=>{
                     const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${item.id}`)
                     return {id: item.id, title: item.name, movieList: response.data.results}
                 })
-                // const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
+                // discover/tv?api_key=${process.env.API_KEY}&with_networks=213
+                const res = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&with_networks=213`)
                 // console.log(response.data.results)
+                data.unshift({id: 1, title: "Netflix Originals", movieList: res.data.results})
                 Promise.all(data).then(val=>{
                     setMovieData(val)
                 })
@@ -27,7 +29,6 @@ const Movies = () => {
             }
         }
         getMovies();
-        // console.log('rendered')
     }, [])
     return (
         <section className="movies__container">
@@ -39,7 +40,7 @@ const Movies = () => {
                 <h3>Avatar: The Way of Water</h3>
                 <p style={{ color: "var(--lighter-grey)" }}><span>2022</span>|
                     <span>U/A 13+</span>|
-                    <span>2h 27min</span>|
+                    <span>3h 10min</span>|
                     <span>Science Fiction, Action & Adventure</span>
                 </p>
                 <p>Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.</p>
@@ -47,13 +48,6 @@ const Movies = () => {
                 <button className="trailer">More Info</button>
                 </div>
                 <div className="movie__hero">
-                    {/* <ReactPlayer className="movie__trailer" 
-                    url="https://youtu.be/d9MyW72ELq0"
-                    loop={true}
-                    playing={true}
-                    muted={true}
-                    width='100%'
-                    height='100%'/> */}
                     <img src="/images/avatar__poster.jpg" alt="avatar__poster"/>
                     
                     <div className="layover3"></div>
@@ -62,7 +56,8 @@ const Movies = () => {
             {movieData.length ? movieData.map(movie => {
                 if (!movie.id) { return "" }
                 return (
-                    <MovieRow
+                    <MovieRow key={movie.id}
+                        genreId={movie.id}
                         genre={movie.title}
                         movieList={movie.movieList}
                         setModal={setModal}
@@ -74,6 +69,7 @@ const Movies = () => {
             {modal && <Modal
                 setModal={setModal}
                 movie={currentMovie} />}
+                <Footer/>
         </section>
     )
 }

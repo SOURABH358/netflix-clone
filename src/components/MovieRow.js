@@ -4,7 +4,7 @@ import SwiperCore, { Navigation, Pagination,Scrollbar, A11y } from "swiper";
 import { BsChevronCompactRight } from "react-icons/bs";
 import 'swiper/css';
 import './MovieRow.css';
-const MovieRow = ({genre, movieList, setModal, setCurrentMovie}) =>{
+const MovieRow = ({genreId, genre, movieList, setModal, setCurrentMovie}) =>{
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const handleSelect = (movie)=>{
@@ -13,7 +13,7 @@ const MovieRow = ({genre, movieList, setModal, setCurrentMovie}) =>{
     }
     SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
     return <div className="movie__list">
-        <h3>{genre + " Movies"}</h3>
+        <h3>{genre}</h3>
         <Swiper className="swiper__container"
     onInit={(swiper) => {
         swiper.params.navigation.prevEl = prevRef.current;
@@ -60,11 +60,11 @@ const MovieRow = ({genre, movieList, setModal, setCurrentMovie}) =>{
         slideToClickedSlide={false}
   >
     {movieList?.map(movie=>{
-        const img = movie.poster_path?`https://image.tmdb.org/t/p/original/${movie.poster_path}`:
+        const img = genreId===1?`https://image.tmdb.org/t/p/original/${movie.poster_path}`:
         `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
         return (
             movie.backdrop_path?<SwiperSlide className="swiper__slide" onClick={()=>handleSelect(movie)}>
-                <div><img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt = {movie.title}/></div>
+                <div><img src={img} alt = {movie.title}/></div>
                 <p>{movie.title}</p>
             </SwiperSlide>:null
         )
