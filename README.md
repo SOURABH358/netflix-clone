@@ -13,7 +13,7 @@
 - React Router
 - Create-react-App
 ## Links  
-Live Site - [demo](https://animated-gaufre-45ae75.netlify.app/)
+Live Site - [demo](https://animated-gaufre-45ae75.netlify.app/)  **(Open in Edge)**
 ### Author
 Made with ❤ by **Sourabh Yadav**
 
