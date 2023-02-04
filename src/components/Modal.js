@@ -6,11 +6,11 @@ const Modal = ({ setModal, movie }) => {
         <div className="movie__details">
             <div className="movie__info">
                 <h3>{movie.title}</h3>
-                <p style={{ color: "var(--lighter-grey)" }}><span>{movie.release_date.slice(0, 4)}</span>|
+                <p style={{ color: "var(--lighter-grey)" }}><span>{movie.release_date?movie.release_date.slice(0, 4):'Unknown'}</span>|
                     <span>{movie.adult ? "U/A 16+" : "U/A 13+"}</span>|
                     <span>2h 27min</span>|
                     <span>{movie.genre_ids.map((el) => {
-                        return movieGenre.filter(item => item.id === el)[0].name
+                        return movieGenre.filter(item => item.id === el)[0]?movieGenre.filter(item => item.id === el)[0].name:'Netflix Originals'
                     }).join(" , ")}</span>
                 </p>
                 <p>{movie.overview}</p>

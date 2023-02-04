@@ -8,6 +8,7 @@ const MovieRow = ({genreId, genre, movieList, setModal, setCurrentMovie}) =>{
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const handleSelect = (movie)=>{
+        console.log(movie)
         setModal(true);
         setCurrentMovie(movie)
     }
